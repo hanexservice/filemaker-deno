@@ -24,7 +24,6 @@ jobs:
           private_key: '${{ secrets.PRIVATE }}'
           preshared_key: '${{ secrets.PRESHARED }}'
 
-
       - uses: denoland/setup-deno@v1
         with:
           deno-version: vx.x.x
