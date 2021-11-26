@@ -46,9 +46,9 @@ class Filemaker {
       method: "POST",
     }).catch((error) => {
       if (error instanceof TypeError) {
-       if (error.message.includes("Connection refused")) {
-         throw new Deno.errors.ConnectionRefused;
-       }
+        if (error.message.includes("Connection refused")) {
+          throw new Deno.errors.ConnectionRefused();
+        }
       }
       throw error;
     });

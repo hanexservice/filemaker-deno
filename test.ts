@@ -1,5 +1,5 @@
 import {
-assert,
+  assert,
   assertEquals,
   assertExists,
 } from "https://deno.land/std@0.116.0/testing/asserts.ts";
@@ -31,9 +31,12 @@ const goodServer = new Filemaker({
 });
 
 Deno.test("Login to bad Filemaker server", async () => {
-  await badServer.login().catch(error => {
-    assert(error instanceof Deno.errors.ConnectionRefused, "Login failure did not return as Deno error.")
-  })
+  await badServer.login().catch((error) => {
+    assert(
+      error instanceof Deno.errors.ConnectionRefused,
+      "Login failure did not return as Deno error.",
+    );
+  });
 });
 
 let session: FilemakerSession;
@@ -82,9 +85,12 @@ Deno.test("Find created Record", async () => {
 Deno.test("Find missing Record", async () => {
   const records = await session.find<RmaRecord>("RmaDatabase", [{
     "rmaNumber": "=Portal 3",
-  }]).catch((error => {
-    assert(error instanceof MissingRecord, "Missing record didn't respond with filemaker error")
-  }))
+  }]).catch((error) => {
+    assert(
+      error instanceof MissingRecord,
+      "Missing record didn't respond with filemaker error",
+    );
+  });
 
   assertEquals(
     records,
