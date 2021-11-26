@@ -1,6 +1,6 @@
 import { FilemakerLoginResponse } from "./types.ts";
 import { FilemakerSession } from "./FilemakerSession.ts";
-import { MissingRecord } from "./errors.ts";
+import { LoginError, StatusCodeError } from "./errors.ts";
 
 type FilemakerAPIVersion = "v1" | "v2";
 
@@ -55,8 +55,12 @@ class Filemaker {
 
     const data: FilemakerLoginResponse = await response.json();
 
+    if (data.messages[0].code === "212") {
+      throw new LoginError(response);
+    }
+
     if (data.messages[0].code !== "0") {
-      throw new MissingRecord(response);
+      throw new StatusCodeError(response);
     }
 
     return new FilemakerSession(this, data.response.token);

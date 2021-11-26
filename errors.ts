@@ -7,6 +7,12 @@ export class FilemakerError extends Error {
   }
 }
 
+export class LoginError extends FilemakerError {
+  constructor(response: Response) {
+    super("Invalid username or password!", response);
+  }
+}
+
 export class StatusCodeError extends FilemakerError {
   constructor(response: Response) {
     super("Unexpected filemaker statuscode", response);
