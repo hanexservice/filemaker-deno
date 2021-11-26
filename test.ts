@@ -23,7 +23,7 @@ const badServer = new Filemaker({
 });
 
 const goodServer = new Filemaker({
-  host: new URL("http://172.16.10.1:8080"),
+  host: new URL("http://172.16.1.10:8080"),
   database: "RmaDatabase",
   layout: "RmaDatabase",
   username: "rmaclient",
