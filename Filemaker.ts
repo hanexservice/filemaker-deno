@@ -1,5 +1,5 @@
 import { FilemakerLoginResponse } from "./types.ts";
-import { FilemakerSession } from "./FileMakerSession.ts";
+import { FilemakerSession } from "./FilemakerSession.ts";
 import { MissingRecord } from "./errors.ts";
 
 type FilemakerAPIVersion = "v1" | "v2";

@@ -7,7 +7,7 @@ import "https://deno.land/x/dotenv/load.ts";
 import { MissingRecord } from "./errors.ts";
 
 import Filemaker from "./Filemaker.ts";
-import { FilemakerSession } from "./FileMakerSession.ts";
+import { FilemakerSession } from "./FilemakerSession.ts";
 
 if (Deno.env.get("FILEMAKER_PASSWORD") == undefined) {
   throw new Error("FILEMAKER_PASSWORD is missing from .env");
