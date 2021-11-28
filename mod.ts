@@ -8,10 +8,10 @@ export type {
   FilemakerEditResponse,
   FilemakerGetResponse,
   FilemakerLoginResponse,
+  FilemakerQuery,
   FilemakerRecord,
   FilemakerResponse,
   FilemakerSort,
-  FilemakerQuery
 } from "./types.ts";
 export {
   FilemakerError,
