@@ -1,6 +1,8 @@
 export { Filemaker } from "./Filemaker.ts";
 export type { ConnectionOptions } from "./Filemaker.ts";
 
+export type { FilemakerSession } from "./FilemakerSession.ts"
+
 export type {
   FilemakerCreateResponse,
   FilemakerEditResponse,

@@ -4,10 +4,8 @@ import {
   assertExists,
 } from "https://deno.land/std@0.116.0/testing/asserts.ts";
 import "https://deno.land/x/dotenv/load.ts";
-import { MissingRecord } from "./errors.ts";
 
-import Filemaker from "./Filemaker.ts";
-import { FilemakerSession } from "./FilemakerSession.ts";
+import { Filemaker, FilemakerSession, MissingRecord} from "./mod.ts";
 
 if (Deno.env.get("FILEMAKER_PASSWORD") == undefined) {
   throw new Error("FILEMAKER_PASSWORD is missing from .env");
