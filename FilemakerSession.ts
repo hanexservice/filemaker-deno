@@ -1,4 +1,4 @@
-import Filemaker from "./Filemaker.ts";
+import { Filemaker } from "./Filemaker.ts";
 import { MissingRecord, StatusCodeError } from "./errors.ts";
 import {
   FilemakerCreateResponse,

@@ -4,7 +4,7 @@ import { LoginError, StatusCodeError } from "./errors.ts";
 
 type FilemakerAPIVersion = "v1" | "v2";
 
-interface ConnectionOptions {
+export interface ConnectionOptions {
   host: URL;
   database: string;
   layout: string;
@@ -13,7 +13,7 @@ interface ConnectionOptions {
   password: string;
 }
 
-class Filemaker {
+export class Filemaker {
   private host: URL;
   private database: string;
   private layout: string;
@@ -66,5 +66,3 @@ class Filemaker {
     return new FilemakerSession(this, data.response.token);
   }
 }
-
-export default Filemaker;
