@@ -4,6 +4,7 @@ import {
   FilemakerCreateResponse,
   FilemakerEditResponse,
   FilemakerGetResponse,
+  FilemakerQuery,
   FilemakerRecord,
   FilemakerResponse,
   FilemakerSort,
@@ -134,7 +135,7 @@ export class FilemakerSession {
 
   public async find<T>(
     layout: string,
-    query: Partial<Record<keyof T, string>>[],
+    query: FilemakerQuery<T>[],
     sort?: FilemakerSort<T>[],
   ): Promise<FilemakerGetResponse<Record<string, string> & T>> {
     const headers = {

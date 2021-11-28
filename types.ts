@@ -58,3 +58,5 @@ export interface FilemakerSort<T> {
   fieldName: keyof T;
   sortOrder: "ascend" | "descend";
 }
+
+export type FilemakerQuery<T> = Partial<Record<keyof T, string>>;

@@ -11,6 +11,7 @@ export type {
   FilemakerRecord,
   FilemakerResponse,
   FilemakerSort,
+  FilemakerQuery
 } from "./types.ts";
 export {
   FilemakerError,
