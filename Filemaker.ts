@@ -7,7 +7,6 @@ type FilemakerAPIVersion = "v1" | "v2";
 export interface ConnectionOptions {
   host: URL;
   database: string;
-  layout: string;
   version?: FilemakerAPIVersion;
   username: string;
   password: string;
@@ -16,7 +15,6 @@ export interface ConnectionOptions {
 export class Filemaker {
   private host: URL;
   private database: string;
-  private layout: string;
   private version: FilemakerAPIVersion;
   private username: string;
   private password: string;
@@ -24,7 +22,6 @@ export class Filemaker {
   constructor(options: ConnectionOptions) {
     this.host = options.host;
     this.database = options.database;
-    this.layout = options.layout;
     this.version = options.version || "v2";
     this.username = options.username;
     this.password = options.password;
