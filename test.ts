@@ -15,7 +15,6 @@ if (Deno.env.get("FILEMAKER_PASSWORD") == undefined) {
 const badServer = new Filemaker({
   host: new URL("http://127.0.0.100:9999"),
   database: "RmaDatabase",
-  layout: "RmaDatabase",
   username: "rmaclient",
   password: Deno.env.get("FILEMAKER_PASSWORD")!,
 });
@@ -23,7 +22,6 @@ const badServer = new Filemaker({
 const goodServer = new Filemaker({
   host: new URL("http://172.16.1.10:8080"),
   database: "RmaDatabase",
-  layout: "RmaDatabase",
   username: "rmaclient",
   password: Deno.env.get("FILEMAKER_PASSWORD")!,
 });
