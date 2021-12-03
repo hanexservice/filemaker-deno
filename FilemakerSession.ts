@@ -35,7 +35,7 @@ export class FilemakerSession {
     const data = await response.json();
 
     if (data.messages[0].code !== "0") {
-      throw new StatusCodeError(response);
+      throw new StatusCodeError(data);
     }
   }
 
@@ -56,7 +56,7 @@ export class FilemakerSession {
     const data: FilemakerCreateResponse = await response.json();
 
     if (data.messages[0].code !== "0") {
-      throw new StatusCodeError(response);
+      throw new StatusCodeError(data);
     }
 
     return data;
@@ -80,7 +80,7 @@ export class FilemakerSession {
     const data: FilemakerEditResponse = await response.json();
 
     if (data.messages[0].code !== "0") {
-      throw new StatusCodeError(response);
+      throw new StatusCodeError(data);
     }
 
     return data;
@@ -103,7 +103,7 @@ export class FilemakerSession {
     const data: FilemakerResponse = await response.json();
 
     if (data.messages[0].code !== "0") {
-      throw new StatusCodeError(response);
+      throw new StatusCodeError(data);
     }
 
     return data;
@@ -127,7 +127,7 @@ export class FilemakerSession {
       await response.json();
 
     if (data.messages[0].code !== "0") {
-      throw new StatusCodeError(response);
+      throw new StatusCodeError(data);
     }
 
     return data;
@@ -152,11 +152,11 @@ export class FilemakerSession {
       await response.json();
 
     if (data.messages[0].code === "401") {
-      throw new MissingRecord(response);
+      throw new MissingRecord(data);
     }
 
     if (data.messages[0].code !== "0") {
-      throw new StatusCodeError(response);
+      throw new StatusCodeError(data);
     }
 
     return data;
