@@ -2,7 +2,11 @@ export class FilemakerError extends Error {
   public response;
   public statusCode;
 
-  constructor(message: string, response: Record<never, never>, statusCode: number) {
+  constructor(
+    message: string,
+    response: Record<never, never>,
+    statusCode: number,
+  ) {
     super(message);
     this.response = response;
     this.statusCode = statusCode;
