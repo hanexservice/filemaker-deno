@@ -52,7 +52,7 @@ export interface FilemakerRecord<
   T extends Record<string, string> = Record<string, string>,
 > {
   fieldData: T;
-  recordId: string;
+  recordId?: string;
 }
 
 export interface FilemakerSort<T> {
