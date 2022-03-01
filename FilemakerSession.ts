@@ -79,6 +79,10 @@ export class FilemakerSession {
 
     const data: FilemakerEditResponse = await response.json();
 
+    if (data.messages[0].code === "101") {
+      throw new MissingRecord(data);
+    }
+
     if (data.messages[0].code !== "0") {
       throw new StatusCodeError(data);
     }
@@ -101,6 +105,10 @@ export class FilemakerSession {
     );
 
     const data: FilemakerResponse = await response.json();
+
+    if (data.messages[0].code === "101") {
+      throw new MissingRecord(data);
+    }
 
     if (data.messages[0].code !== "0") {
       throw new StatusCodeError(data);
@@ -125,6 +133,10 @@ export class FilemakerSession {
 
     const data: FilemakerGetResponse<Record<string, string> & T> =
       await response.json();
+
+      if (data.messages[0].code === "101") {
+        throw new MissingRecord(data);
+      }
 
     if (data.messages[0].code !== "0") {
       throw new StatusCodeError(data);
