@@ -24,28 +24,28 @@ jobs:
       - name: Run linter
         run: deno lint
 
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v2
-
-      - name: Set up WireGuard
-        uses: egor-tensin/setup-wireguard@v1
-        with:
-          endpoint: '${{ secrets.ENDPOINT }}'
-          endpoint_public_key: '${{ secrets.ENDPOINT_PUBLIC }}'
-          ips: '${{ secrets.IPS }}'
-          allowed_ips: '${{ secrets.ALLOWED_IPS }}'
-          private_key: '${{ secrets.PRIVATE }}'
-          preshared_key: '${{ secrets.PRESHARED }}'
-
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: vx.x.x
-
-      - name: Run tests
-        run: deno test -A --unstable
-        env:
-          FILEMAKER_PASSWORD: ${{ secrets.FILEMAKER_PASSWORD }}
+          #  test:
+          #    runs-on: ubuntu-latest
+          #
+          #    steps:
+          #      - name: Setup repo
+          #        uses: actions/checkout@v2
+          #
+          #      - name: Set up WireGuard
+          #        uses: egor-tensin/setup-wireguard@v1
+          #        with:
+          #          endpoint: '${{ secrets.ENDPOINT }}'
+          #          endpoint_public_key: '${{ secrets.ENDPOINT_PUBLIC }}'
+          #          ips: '${{ secrets.IPS }}'
+          #          allowed_ips: '${{ secrets.ALLOWED_IPS }}'
+          #          private_key: '${{ secrets.PRIVATE }}'
+          #          preshared_key: '${{ secrets.PRESHARED }}'
+          #
+          #      - uses: denoland/setup-deno@v1
+          #        with:
+          #          deno-version: vx.x.x
+          #
+          #      - name: Run tests
+          #        run: deno test -A --unstable
+          #        env:
+          #          FILEMAKER_PASSWORD: ${{ secrets.FILEMAKER_PASSWORD }}
